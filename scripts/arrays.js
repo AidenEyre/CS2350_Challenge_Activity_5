@@ -115,3 +115,29 @@ function colorsWithoutB() {
     document.getElementById("nonBColors").innerHTML = allColorsHTML;
 }
 
+
+// Display colors that don't contain the letter 'n'.
+function colorsNotContainingN() {
+    // Create string that will list each color from the array in the web page.
+    let allColorsHTML = "<ul>"
+    for(let i = 0; i < colorArray.length; i++) {
+        if(containsLetter(colorArray[i], 'n') === false) {
+            allColorsHTML += "<li>" + colorArray[i] + "</li>";
+        }
+    }
+    allColorsHTML += "</ul>";
+    document.getElementById("filterColors").innerHTML = allColorsHTML;
+}
+
+
+// Function to check if a string contains a chosen letter.
+function containsLetter(str, letter) {
+    // Loop through string and check if each letter is the chosen letter.
+    for (var i = 0; i < str.length; i++) {
+        if(str[i] === letter) {
+            return true;    // If found, return true.
+        }
+      }
+    return false;   // Return false if nothing is not found.
+}
+
