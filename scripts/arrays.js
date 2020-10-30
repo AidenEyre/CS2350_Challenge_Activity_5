@@ -7,6 +7,8 @@
    Date:   30 October 2020
 */
 
+myFamily(); // Call the myfamily function.
+
 // Display an array of my family.
 function myFamily() {
   let firstNames = [
