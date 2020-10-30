@@ -151,6 +151,33 @@ function containsLetter(str, letter) {
 let animals = ["hippo", "dog", "cat", "donkey", "bird", "whale"];
 let numArray = [51, 14, -2, 128, 46, 88];
 
+// Call the functions.
+twoArrays();
+
 function twoArrays() {
+    let twoArraysHTML = "<p>"   // Initialize a string for our HTML code.
+
+    // Loop through animals array adding each animal to the string.
+    for(let i = 0; i < animals.length; i++) {
+        // Use an if statement to add commas where necessary.
+        if(i < animals.length -1 && i != 0) {
+            twoArraysHTML += ", ";
+        }
+        twoArraysHTML += animals[i];
+    }
+
+    twoArraysHTML += "</p><p>"; // End the paragraph and start a new one.
+
+    // Loop through the num array adding each number to the string.
+    for(let i = 0; i < numArray.length; i++) {
+        // Use an if statement to add commas where necessary.
+        if(i < numArray.length -1 && i != 0) {
+            twoArraysHTML += ", ";
+        }
+        twoArraysHTML += numArray[i];
+    }
+
+    twoArraysHTML += "</p>";    // End the paragraph.
     
+    document.getElementById("twoArrays").innerHTML = twoArraysHTML; // Update the twoArrays div in out html text.
 }
