@@ -7,9 +7,21 @@
    Date:   30 October 2020
 */
 
-myFamily(); // Call the myfamily function.
+// Initialize an empty array and add eight different colors using push, unshift, and splice.
+let colorArray = [];
+colorArray.push("blue");
+colorArray.push("orange");
+colorArray.unshift("red");
+colorArray.splice(2, 0, "green", "purple", "brown", "yellow", "pink");
 
-// Display an array of my family.
+
+// Call functions for each section.
+myFamily();    // Call the myfamily function.
+allColors();   // Call the allColors function.
+colorsWithP(); // Call the colorsWithp function.
+
+
+// Display a table of my family to to the web page.
 function myFamily() {
   let firstNames = [
     "Sydney",
@@ -51,3 +63,20 @@ function myFamily() {
   myFamilyHTML += "</table>";
   document.getElementById("family").innerHTML = myFamilyHTML;
 }
+
+
+// Display entire colorArray.
+function allColors() {
+    // Create string that will list each color from the array in the web page.
+    let allColorsHTML = "<ul>"
+    for(let i = 0; i < colorArray.length; i++) {
+        allColorsHTML += "<li>" + colorArray[i] + "</li>";
+    }
+    allColorsHTML += "</ul>";
+    document.getElementById("allColors").innerHTML = allColorsHTML;
+}
+
+
+
+
+
