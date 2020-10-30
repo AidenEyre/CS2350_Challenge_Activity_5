@@ -77,6 +77,19 @@ function allColors() {
 }
 
 
-
+// Display colors from colorArray that start with p.
+function colorsWithP() {
+    // Create string that will list each color from the array in the web page.
+    let allColorsHTML = "<ul>"
+    for(let i = 0; i < colorArray.length; i++) {
+        // If the 0 index of each color of the array equals p, then add to the string.
+        if(colorArray[i][0] === 'p') {
+            allColorsHTML += "<li>" + colorArray[i] + "</li>";
+        }
+    }
+    allColorsHTML += "</ul>";
+    document.getElementById("pColors").innerHTML = allColorsHTML;
+    console.log(allColorsHTML);
+}
 
 
