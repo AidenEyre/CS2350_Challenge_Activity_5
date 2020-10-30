@@ -7,19 +7,11 @@
    Date:   30 October 2020
 */
 
-// Initialize an empty array and add eight different colors using push, unshift, and splice.
-let colorArray = [];
-colorArray.push("blue");
-colorArray.push("orange");
-colorArray.unshift("red");
-colorArray.splice(2, 0, "green", "purple", "brown", "yellow", "pink");
+/**************************************************************************************/
+/***************     Part 1: Declare, Initialize and Display Arrays     ***************/
+/**************************************************************************************/
 
-
-// Call functions for each section.
-myFamily();    // Call the myfamily function.
-allColors();   // Call the allColors function.
-colorsWithP(); // Call the colorsWithp function.
-
+myFamily(); // Call the myfamily function.
 
 // Display a table of my family to to the web page.
 function myFamily() {
@@ -64,6 +56,23 @@ function myFamily() {
   document.getElementById("family").innerHTML = myFamilyHTML;
 }
 
+/**************************************************************************************/
+/*********************     Part 2: Select Items From an Array     *********************/
+/**************************************************************************************/
+
+// Initialize an empty array and add eight different colors using push, unshift, and splice.
+let colorArray = [];
+colorArray.push("blue");
+colorArray.push("orange");
+colorArray.unshift("red");
+colorArray.splice(2, 0, "green", "purple", "brown", "yellow", "pink");
+
+// Call functions for each section.
+allColors();            // Call the allColors function.
+colorsWithP();          // Call the colorsWithp function.
+colorsWithoutB();       // Call the colorsWithoutB function.
+colorsNotContainingN(); // call the colorsNotContainingN function.
+
 
 // Display entire colorArray.
 function allColors() {
@@ -89,7 +98,20 @@ function colorsWithP() {
     }
     allColorsHTML += "</ul>";
     document.getElementById("pColors").innerHTML = allColorsHTML;
-    console.log(allColorsHTML);
 }
 
+
+// Display colors from colorArray that don't start with b.
+function colorsWithoutB() {
+    // Create string that will list each color from the array in the web page.
+    let allColorsHTML = "<ul>"
+    for(let i = 0; i < colorArray.length; i++) {
+        // If the 0 index of each color of the array equals p, then add to the string.
+        if(colorArray[i][0] != 'b') {
+            allColorsHTML += "<li>" + colorArray[i] + "</li>";
+        }
+    }
+    allColorsHTML += "</ul>";
+    document.getElementById("nonBColors").innerHTML = allColorsHTML;
+}
 
