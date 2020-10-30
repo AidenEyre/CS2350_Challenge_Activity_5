@@ -21,7 +21,6 @@ function myFamily() {
     "Drake",
     "Tristan",
   ];    // Array of family first names.
-
   let nameRelationship = [
     "Wife",
     "Father",
@@ -34,4 +33,19 @@ function myFamily() {
     "Step-Brother",
     "Brother",
   ];    // Array of relationships of the names in the previous array.
+  let myFamilyHTML = "<table id='familyTable'>" +
+                     "<tr><th>Name</th><th>Relationship</th></tr>"; // Initialize html code for the "My Family" table.
+
+
+  // Loop through firstNames array and add each person to the "My Family" table.
+  for(let i = 0; i < firstNames.length; i++) {
+    myFamilyHTML += "<tr>" +
+                    "<td>" + firstNames[i] + "</td>" +
+                    "<td>" + nameRelationship[i] + "</td>" +
+                    "</tr>";    // Add table row with first name and relationship.
+  }
+
+  // Close off myFamilyHTML code and update the family innerHTML with the new string.
+  myFamilyHTML += "</table>";
+  document.getElementById("family").innerHTML = myFamilyHTML;
 }
