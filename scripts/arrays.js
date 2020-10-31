@@ -150,34 +150,46 @@ function containsLetter(str, letter) {
 // Initialize arrays.
 let animals = ["hippo", "dog", "cat", "donkey", "bird", "whale"];
 let numArray = [51, 14, -2, 128, 46, 88];
+// Initialize string with nothing.
 
-// Call the functions.
-twoArrays();
+// Display the two arrays.
+document.getElementById("twoArrays").innerHTML = displayArray(animals) + displayArray(numArray);
 
-function twoArrays() {
-    let twoArraysHTML = "<p>"   // Initialize a string for our HTML code.
+// Display the two arrays that're sorted.
+animals.sort();
+numArray.sort();
+document.getElementById("sortedArrays").innerHTML = displayArray(animals) + displayArray(numArray);
+
+// Display the two arrays that're sorted with the number array correctly sorted.
+// By using an arrow compare function, we can correctly sort the number array.
+document.getElementById("sortedNumberArray").innerHTML = displayArray(numArray) + displayArray(numArray.sort((a, b) => a-b));
+
+
+// Function that returns a string of html code displaying array elements.
+function displayArray(arr) {
+    let twoArraysHTML = "<p>";  // Initialize a string for our HTML code.
 
     // Loop through animals array adding each animal to the string.
-    for(let i = 0; i < animals.length; i++) {
+    for(let i = 0; i < arr.length; i++) {
         // Use an if statement to add commas where necessary.
-        if(i < animals.length -1 && i != 0) {
+        if(i < arr.length && i != 0) {
             twoArraysHTML += ", ";
         }
-        twoArraysHTML += animals[i];
+        twoArraysHTML += arr[i];
     }
 
-    twoArraysHTML += "</p><p>"; // End the paragraph and start a new one.
-
-    // Loop through the num array adding each number to the string.
-    for(let i = 0; i < numArray.length; i++) {
-        // Use an if statement to add commas where necessary.
-        if(i < numArray.length -1 && i != 0) {
-            twoArraysHTML += ", ";
-        }
-        twoArraysHTML += numArray[i];
-    }
-
-    twoArraysHTML += "</p>";    // End the paragraph.
-    
-    document.getElementById("twoArrays").innerHTML = twoArraysHTML; // Update the twoArrays div in out html text.
+    twoArraysHTML += "</p>";    // End paragraph.
+    return twoArraysHTML;   // Return html string.
 }
+
+
+/**************************************************************************************/
+/******************     Part 4: Add Dates to the Footer Section     *******************/
+/**************************************************************************************/
+
+let lastModified = document.lastModified;
+let currentDate = new Date();
+let footerDateHTML = "<h4>Last Modified: " + lastModified +
+                 "</h4><h4>Current Date: " + currentDate + "</h4>";
+
+document.getElementById("dates").innerHTML = footerDateHTML;

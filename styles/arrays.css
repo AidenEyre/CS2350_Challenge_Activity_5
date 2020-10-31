@@ -6,3 +6,90 @@
    Author: Aiden Eyre
    Date:   30 October 2020
 */
+
+/* html and body styles */
+
+section h2:first-of-type{
+    border-top: 3px solid black;
+    padding-top: 2%;
+}
+
+html {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: rgb(204, 218, 213);
+}
+
+/* Header Styles */
+
+h2 {
+    clear: both;
+    margin:  1% auto;
+    width:70%
+}
+
+h1 {
+    text-shadow: rgba(128, 128, 128, 0.61) 2px 2px 1px;
+    text-decoration: underline;
+    text-align: center;
+}
+
+body section:first-of-type h2 {
+    text-align: center;
+}
+
+
+/* Table Styles */
+
+table {
+    margin: 0 auto 10% auto;
+    width: 50%;
+    border-collapse: collapse;
+    left: 60%;
+}
+
+table th {
+    font-size: 1.2em;
+}
+
+table td {
+    border: 1px solid black;
+    width: 60%;
+    padding: 2%;
+    vertical-align: top;
+    text-align: center;
+}
+
+
+/* section styles */
+
+section>div {
+    margin: auto;
+    width: 70%;
+}
+
+section>div>ul {
+    list-style-type: none;
+    width: 60%;
+    margin-left: 10%;
+}
+
+section>div>ul>li {
+    float: left;
+    text-align: left;
+    width: auto;
+    padding: 1%;
+    font-size: 1em;
+}
+
+section:nth-of-type(3) p {
+    margin-left: 15%;
+}
+
+/* footer styles */
+
+footer {
+    margin-top: 5%;
+    padding: 0.5%;
+    background-color: gray;
+    text-align: center;
+}
